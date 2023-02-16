@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body .outheader {
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+main article {
+  border: solid;
+  border-color: rgb(200, 200, 200);
+  border-radius: 15px;
+  margin-bottom: 5px;
+  padding-right: 20px;
+  width: 850px;
+  height: 149px;
+}
+
+main .author_name {
+  font-weight: lighter;
+  margin-bottom: 0px;
+  padding: 0;
+}
+
+main article img {
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  margin-right: 10px;
+}
+
+main .second_info {
+  font-weight: normal;
+  text-indent: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right_column {
+  border: solid;
+  border-color: rgb(200, 200, 75);
+  width: 30%;
+  padding-right: 5px;
+  border-radius: 15px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+}
+
+.article_create {
+  width: 500px;
+  height: 500px;
+}
+
+div .full_article {
+  border: solid;
+  border-color: rgb(200, 200, 200);
+  border-radius: 15px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 95%;
+}
+
+.full_article h1 {
+  text-indent: 20px;
+  font-size: 36pt;
+}
+
+.full_article p {
+  font-weight: lighter;
+  text-indent: 20px;
+  padding-top: 20px;
+}
+
+.article_main_text {
+  font-size: 14pt;
+}
+
+.article_text_preview {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin: 10px 20px 10px 0;
+  text-indent: 10px;
+}
+
+.article_preview {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.article_header_text {
+  font-weight: bold;
+  font-size: 22pt;
+  margin: 8px 0 0 0;
+  padding: 0;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+.register_container h1 {
+  padding-top: 20px;
+  margin-top: 20px;
+}

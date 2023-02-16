@@ -1,0 +1,31 @@
+{% extends "articles/layout.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+    <main>
+    <h1>Добро пожаловать на главной странице сайта Django blog ZSS</h1>
+    <h3 class="second_info">На данной странице вы можете найти все статьи</h3><br>
+    <div class="container">
+        <div class="left_column">
+        {% for el in articles %}
+        <article>
+            <div class="preview_image">
+                <a href='{% url "article-view" el.id %}'><img src={{el.picture}} width="144" height="144" align="left"></a>
+            </div>
+            <div class="article_preview">
+                <p class="article_header_text"><a href='{% url "article-view" el.id %}'>{{el.title}}</a></p>
+                <p class="article_text_preview"><a href='{% url "article-view" el.id %}'>{{el.text}}</a></p>
+                <div class="author_name" ><a href="#">Author: {{el.author}}</a></div> {# Сделать вывод всех статей, сделанных данным автором #}
+            </div>
+        </article>
+        {% endfor %}
+        </div>
+        <div class="right_column">
+            {# Тут сделать перечисление статей с лучшим рейтингом в тегах <a> #}
+            <a href="#">Тут какая-то ссылка</a>
+        </div>
+    </div>
+        {{ dir }}
+    </main>
+{% endblock %}

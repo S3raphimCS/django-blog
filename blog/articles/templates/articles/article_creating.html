@@ -1,0 +1,21 @@
+{% extends "articles/layout.html" %}
+
+{% block title %}Создание статьи{% endblock %}
+
+{% block content %}
+    <center>
+        <div class="article_create">
+            <h1>Создание новой статьи</h1> <br>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.picture }}<br>
+                {{ form.title }}<br>
+                {{ form.text }}<br>
+<!--                {{ form.date }}<br>-->
+                {{ form.author }} <br><br>
+                <span color="red"> {{ error }} </span>
+                <button class="btn btn-success" type="submit">Добавить статью</button>
+            </form>
+        </div>
+    </center>
+{% endblock %}

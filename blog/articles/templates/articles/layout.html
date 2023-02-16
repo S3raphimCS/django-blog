@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'articles/css/main.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="py-2 bg-light border-bottom">
+    <div class="container d-flex flex-wrap">
+      <ul class="nav me-auto">
+        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link link-dark px-2 active" aria-current="page">Главная</a></li>
+        <li class="nav-item"><a href="{% url 'about' %}" class="nav-link link-dark px-2">Обо мне</a></li>
+        <li class="nav-item"><a href="{% url 'contacts' %}" class="nav-link link-dark px-2">Контакты</a></li>
+      </ul>
+      <ul class="nav">
+        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Войти</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Зарегистрироваться</a></li>
+      </ul>
+    </div>
+  </nav>
+   <header class="py-3 mb-4 border-bottom">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4">Django blog ZSS</span>
+      </a>
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
+        <input type="search" class="form-control" placeholder="Поиск по статьям..." aria-label="Search">
+      </form>
+    </div>
+  </header>
+  <div class="outheader">
+      {% block content %}
+      {% endblock %}
+  </div>
+</body>
+</html>
