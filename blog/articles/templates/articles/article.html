@@ -9,14 +9,19 @@
         <img src={{article.picture}} width='130' height="130" align="left">
         <img src={{article.picture}} width="130" height="130" align="right">
         <h1>{{article.title}}</h1>
-        <p>{{article.date}}</p>
+        <p class="info">Дата публикации - {{article.publication_date}}<br>
+            Дата последнего изменения - {{article.date_of_last_change}}</p>
     </div><br><br>
     <div class="article_main_text">
         {{ article.text }}
-    <p class="author_name" align="right">
+    <p class="info" align="right">
         Автор статьи: {{ article.author }}
     </p>
     </div>
     </div>
+        <div class="buttons">
+            <a href="{% url 'article_update' article.id %}" class="btn btn-warning">Изменить</a>
+            <a href="{% url 'article_delete' article.id %}" class="btn btn-danger">Удалить</a>
+        </div>
     </center>
 {% endblock %}

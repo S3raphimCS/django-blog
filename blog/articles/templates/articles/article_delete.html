@@ -1,0 +1,18 @@
+{% extends "articles/layout.html" %}
+
+{% block title %}Удаление статьи{% endblock %}
+
+{% block content %}
+    <center>
+        <div class="article_create">
+            <h1>Вы уверены, что хотите удалить статью?</h1> <br>
+            <p>Совершив это, вы навсегда потеряете доступ к статье без возможно восстановления.</p><br>
+            <form method="post" enctype="multipart/form-data">
+
+                {% csrf_token %}
+                <span color="red"> {{ error }} </span>
+                <button class="btn btn-danger" type="submit">Удалить статью</button>
+            </form>
+        </div>
+    </center>
+{% endblock %}

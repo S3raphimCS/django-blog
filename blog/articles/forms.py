@@ -1,13 +1,11 @@
 from .models import Article
 from django import forms
 
-# Не работает добавление картинки при создании статьи через create (form)
-
 
 class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
-        fields = ['author', 'picture', 'title', 'text', 'date']
+        fields = ['author', 'picture', 'title', 'text']
 
         widgets = {
             "title": forms.TextInput(attrs={

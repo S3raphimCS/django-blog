@@ -79,9 +79,15 @@ div .full_article {
   font-size: 36pt;
 }
 
+/*
 .full_article p {
   font-weight: lighter;
   text-indent: 20px;
+  padding-top: 20px;
+} */
+
+.info {
+  font-weight: lighter;
   padding-top: 20px;
 }
 
@@ -110,6 +116,17 @@ div .full_article {
   font-size: 22pt;
   margin: 8px 0 0 0;
   padding: 0;
+}
+
+.buttons {
+  padding-top: 20px;
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buttons a {
+  margin-right: 10px;
 }
 
 a:link,
