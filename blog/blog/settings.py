@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'articles',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -130,4 +132,9 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# admin_password = 'a9242053186'
+# admin name = S3raphmCS
+# admin password = 123
+
+# Users
+
+AUTH_USER_MODEL = 'users.User'

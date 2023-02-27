@@ -1,0 +1,74 @@
+[
+{
+  "model": "articles.article",
+  "pk": 1,
+  "fields": {
+    "author": 1,
+    "picture": "uploads/python.png",
+    "title": "Python",
+    "text": "Python - современный многофункциональный интерпретируемый язык программирования с большим будущим!",
+    "publication_date": "2023-02-24T16:23:58.740Z",
+    "date_of_last_change": "2023-02-24T16:54:00.705Z"
+  }
+},
+{
+  "model": "articles.article",
+  "pk": 2,
+  "fields": {
+    "author": 1,
+    "picture": "uploads/C.png",
+    "title": "C#",
+    "text": "Мог бы быть неплохим языком, если бы в названии не было буквы C",
+    "publication_date": "2023-02-24T16:23:58.740Z",
+    "date_of_last_change": "2023-02-24T16:23:58.728Z"
+  }
+},
+{
+  "model": "articles.article",
+  "pk": 3,
+  "fields": {
+    "author": 1,
+    "picture": "uploads/js.png",
+    "title": "JavaScript",
+    "text": "Язык, появившийся от языка Java и ставший полностью самостоятельным. Используется динамическая типизация и зачастую применяется в веб индустрии.",
+    "publication_date": "2023-02-24T16:23:58.740Z",
+    "date_of_last_change": "2023-02-24T16:23:58.728Z"
+  }
+},
+{
+  "model": "articles.article",
+  "pk": 4,
+  "fields": {
+    "author": 1,
+    "picture": "uploads/golang.png",
+    "title": "Go",
+    "text": "Тот язык с которым предлагали работу, но я ничего о нем не знаю, кроме того, чтоб там используется строгая типизация",
+    "publication_date": "2023-02-24T16:23:58.740Z",
+    "date_of_last_change": "2023-02-24T16:23:58.728Z"
+  }
+},
+{
+  "model": "articles.article",
+  "pk": 15,
+  "fields": {
+    "author": 1,
+    "picture": "uploads/ruby_O2zCdST.png",
+    "title": "Ruby",
+    "text": "Ruby (англ. ruby — рубин, произносится ['ru:bɪ] — ру́би) — динамический, рефлективный, интерпретируемый высокоуровневый язык программирования[8][9]. Язык обладает независимой от операционной системы реализацией многопоточности, сильной динамической типизацией, сборщиком мусора и многими другими возможностями[⇨]. По особенностям синтаксиса он близок к языкам Perl и Eiffel, по объектно-ориентированному подходу — к Smalltalk. Также некоторые черты языка взяты из Python, Lisp, Dylan и Клу.",
+    "publication_date": "2023-02-24T16:23:58.740Z",
+    "date_of_last_change": "2023-02-24T16:23:58.728Z"
+  }
+},
+{
+  "model": "articles.article",
+  "pk": 16,
+  "fields": {
+    "author": 1,
+    "picture": "uploads/pic_AS03WvD.jpg",
+    "title": "Котек",
+    "text": ";c",
+    "publication_date": "2023-02-24T16:23:58.740Z",
+    "date_of_last_change": "2023-02-24T16:23:58.728Z"
+  }
+}
+]

@@ -2,9 +2,13 @@ from django.shortcuts import render, redirect
 from .models import Article
 from .forms import ArticleForm
 from django.views.generic import DetailView, UpdateView, DeleteView
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
 from django.utils import timezone
-#TODO
-#ListView
+
+
+# TODO
+# ListView
 
 
 def index(request):
@@ -59,3 +63,12 @@ def article_create(request):
     }
 
     return render(request, 'articles/article_creating.html', data)
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password')

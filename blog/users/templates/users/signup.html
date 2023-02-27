@@ -1,0 +1,41 @@
+{% extends 'users/base.html'%}
+
+{% block title%}Регистрация{% endblock %}
+
+{% block content%}
+    <div class="container">
+        <div class="authentication_info">Регистрация</div>
+        <div class="login_input">
+            <div>
+                <label for="InputFirstName">Имя</label>
+                <input class="" id="InputFirstName" type="text" placeholder="Введите ваше имя">
+            </div>
+            <div>
+                <label for="InputLastName">Фамилия</label>
+                <input class="" id="InputLastName" type="text" placeholder="Введите вашу фамилию">
+            </div>
+            <div>
+                <label for="InputEmailAddress">Эл. почта</label>
+                <input class="" id="InputEmailAddress" type="email" placeholder="Введите адрес эл. почты">
+            </div>
+            <div>
+                <label for="InputUsername">Имя пользователя</label>
+                <input class="" id="InputUsername" type="text" placeholder="Введите имя пользователя">
+            </div>
+            <div>
+                <label for="InputPassword">Пароль</label>
+                <input class="" id="InputPassword" type="password" placeholder="Введите пароль">
+            </div>
+            <div>
+                <label for="InputConfirmPassword">Подтверждение пароля</label>
+                <input class="" id="InputConfirmPassword" type="password" placeholder="Подтвердите пароль">
+            </div>
+            <div>
+                <input class="btn btn-primary" type="submit" value="Создать аккаунт">
+            </div>
+            <div class="no_account">
+                <a href="{% url 'login' %}">Уже есть аккаунт? Авторизоваться</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

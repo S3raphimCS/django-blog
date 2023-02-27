@@ -1,0 +1,32 @@
+{% extends 'users/base.html' %}
+
+{% block title%}Авторизация{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="authentication_info">Авторизация</div>
+        <div class="login_input">
+            <div>
+                <label for="InputEmailAddress">Имя пользователя</label>
+                <input class="" id="InputEmailAddress" type="text" placeholder="Введите имя пользователя">
+            </div>
+            <div>
+                <label for="InputPassword">Пароль</label>
+                <input class="" id="InputPassword" type="password" placeholder="Введите пароль">
+            </div>
+            <div>
+                <a class="forget_password" href="#">Забыли пароль?</a>
+                <input class="btn btn-primary" type="submit" value="Авторизоваться">
+            </div>
+            <div class="authentication_logos">
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </div>
+            <div class="no_account">
+                <a href="{% url 'signup' %}">Нужен аккаунт? Зарегистрируйся!</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
