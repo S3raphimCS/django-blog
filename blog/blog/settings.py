@@ -123,7 +123,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    "C:/Users/ben-u/OneDrive/Рабочий стол/web-apps/Blog/blog/articles/static",
+    BASE_DIR / 'articles' / 'static',
+    # "C:/Users/ben-u/OneDrive/Рабочий стол/web-apps/Blog/blog/articles/static",
     # '/var/www/static', Нужно только при выгрузке на сервер
 ]
 

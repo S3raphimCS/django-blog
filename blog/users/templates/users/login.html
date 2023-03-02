@@ -6,14 +6,16 @@
     <div class="container">
         <div class="authentication_info">Авторизация</div>
         <div class="login_input">
-            <div>
-                <label for="InputEmailAddress">Имя пользователя</label>
-                <input class="" id="InputEmailAddress" type="text" placeholder="Введите имя пользователя">
-            </div>
-            <div>
-                <label for="InputPassword">Пароль</label>
-                <input class="" id="InputPassword" type="password" placeholder="Введите пароль">
-            </div>
+            <form>
+                {{ form.as_p }}
+<!--            <div>-->
+<!--                <label for="InputEmailAddress">Имя пользователя</label>-->
+<!--                <input class="" id="InputEmailAddress" type="text" placeholder="Введите имя пользователя">-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <label for="InputPassword">Пароль</label>-->
+<!--                <input class="" id="InputPassword" type="password" placeholder="Введите пароль">-->
+<!--            </div>-->
             <div>
                 <a class="forget_password" href="#">Забыли пароль?</a>
                 <input class="btn btn-primary" type="submit" value="Авторизоваться">
@@ -24,6 +26,7 @@
                 <a href="#"></a>
                 <a href="#"></a>
             </div>
+            </form>
             <div class="no_account">
                 <a href="{% url 'signup' %}">Нужен аккаунт? Зарегистрируйся!</a>
             </div>
