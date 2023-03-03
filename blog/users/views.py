@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import UserLoginForm, UserRegistrationForm, UserProfileForm
 from django.contrib import auth
+from articles.models import Article
 
 
 def login(request):
@@ -33,7 +34,13 @@ def sign_up(request):
 
 
 def profile(request):
-    # form = UserProfileForm()
-    context = {'smth': None,
-               }
+    if request.method == 'POST':
+        form = UserProfileForm(instance=request.user, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = UserProfileForm(instance=request.user)
+    context = {'form': form, 'date_joined': request.user.date_joined, 'articles': Article.objects.all().filter(author=request.user)}
+    print(context['articles'])
     return render(request, 'users/profile.html', context)

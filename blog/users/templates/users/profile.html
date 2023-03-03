@@ -32,39 +32,94 @@
       </form>
     </div>
   </header>
-	<h1>Профиль пользователя {# {% username %} #}</h1>
-	<div class='page'>
-		<div class='visual-info'>
+  <div class='main-content'>
+	<h1 class='cabinet'>Личный кабинет</h1>
+	<!-- <div class='page'> -->
+		<form action='{% url "profile" %}' method='post' class='user-profile'>
+			{% csrf_token %}
+		<div class='visual-info col-sm-4'>
 			<div class='avatar'>
-				<p>Тут картинка</p>
+				<img src='{% if user.image %} {{ user.image.url }} {% else %} {% static "users/icons/user.png" %} {% endif %}' class='img rounded-circle' alt='User-Profile-Image' width='200px' height='200px'>
 			</div>
 			<div class='username'>
-				<p>Тут имя</p>
+				<label>Никнейм: </label>
+				{{ form.username }}
 			</div>
 			<div class="social-networks">
-				<p>Тут будут сети</p>
+				<center>
+				<a href="#!" class='social-network-url'><img src='{% static "users/icons/facebook.png" %}' width='48px' height='48px'></a>
+				<a href="#!" class='social-network-url'><img src='{% static "users/icons/google.png" %}' width='48px' height='48px'></a>
+				<a href="#!" class='social-network-url'><img src='{% static "users/icons/github.png" %}' width='48px' height='48px'></a>
+				<a href="#!" class='social-network-url'><img src='{% static "users/icons/vk.png" %}' width='48px' height='48px'></a></a>
+      </center>
 			</div>
 		</div>
-		<div class='text-info'>
-			<div class='info'>
-				<h2>Info</h2>
-			</div>
-			<div>
-				<div class='names'><p>Имя</p><p>Фамилия</p></div>
-				<div>
-					<p>Email</p>
-					<p>Дата регистрации</p>
+		<div class='text-info col-sm-8'>
+			<!-- <div class='info'>
+				<h2>Информация</h2>
+			</div> -->
+			<div class='info-container'>
+				<div class='row'>
+					<div class='firstname col-sm-6 left-column'>
+					<label>Имя</label>
+					{{ form.first_name }}
+					</div>		 
+					<div class='lastname col-sm-6 right-column'>
+											<div class='for-right-column'>
+					<label>Фамилия</label>
+					{{ form.last_name }}
+											</div>
+					</div>
 				</div>
-				<div class='articles-info'>
-					<p>Последняя статья</p>
-					<p>Статья с наибольшим количеством просмотров</p>
+				<div class='row'>
+					<div class='email col-sm-6 left-column' >
+					<label>Email</label>
+					{{ form.email }}
+					</div>			
+					<div class='date col-sm-6 right-column'>
+											<div class='for-right-column'>
+					<label>Дата регистрации</label>
+					{{ form.date_joined }}
+											</div>
+					</div>
+					<div class="col-sm-12">
+					<button class='btn btn-success save'>Сохранить</button>
+					</div>
+				</div>
+				<div class='articles-info row left-column'>
+					<div class='col-sm-6'>
+					<label><a href='#' class='article-link'>Последняя статья</a></label>
+					</div>
+					<div class='col-sm-6 right-column'>
+											<div class='for-right-column'>
+					<label><a href='#' class='article-link'>Статья с наибольшим количеством просмотров</a></label>
+											</div>
+					</div>
 				</div>
 			</div>
+			</form>
 		</div>
-		<div class="article-header"></div>
+		<div class="article-header">
+			<h1 class='article-header-text'>Все статьи</h1>
+		</div>
 		<div class="articles">
-			{# for article in articles #}
+			{% if articles %}
+			{% for article in articles %}
+			<article>
+      	<div class="preview_image">
+      	    <a href='{% url "article-view" article.id %}' class="article-link"><img src="../../{{ article.picture }}" class="img" width="144" height='144'	align="left"></a>
+      	</div>
+      	<div class="article_preview">
+      	    <p class="article_header_text"><a href='{% url "article-view" article.id %} ' class='article-link'>{{article.title}}</a></p>
+      	    <p class="article_text_preview"><a href='{% url "article-view" article.id %}' class='article-link'>{{article.text}}</a></p>
+      	</div>
+      </article>
+			{% endfor %}
+			{% else %}
+				<h3><u>Здесь пока нет статей ;c</u></h3>
+			{% endif %}
 		</div>
-	</div>
+	<!-- </div> -->
+	<div> {# main content #}
 </body>
 </html>

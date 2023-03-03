@@ -67,23 +67,27 @@ class UserRegistrationForm(UserCreationForm):
 
 class UserProfileForm(UserChangeForm):
     first_name = forms.CharField(widget=forms.TextInput(attrs={
-        'class': None,
+        'class': 'form-input',
     }))
     last_name = forms.CharField(widget=forms.TextInput(attrs={
-        'class': None,
+        'class': 'form-input',
     }))
     email = forms.CharField(widget=forms.TextInput(attrs={
-        'class': None,
+        'class': 'form-input',
         'readonly': True,
     }))
     image = forms.ImageField(widget=forms.FileInput(attrs={
-        'class': None
-    }))
+        'class': 'img-radius',
+    }), required=False)
     username = forms.CharField(widget=forms.TextInput(attrs={
-        'class': None,
+        'class': 'form-input username-input',
+        'readonly': True,
+    }))
+    date_joined = forms.DateTimeField(widget=forms.DateTimeInput(attrs={
+        'class': 'form-input',
         'readonly': True,
     }))
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email', 'username']
+        fields = ['first_name', 'last_name', 'email', 'image', 'username', 'date_joined']
