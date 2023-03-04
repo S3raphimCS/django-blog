@@ -2,6 +2,12 @@ from django.shortcuts import render, redirect
 from .forms import UserLoginForm, UserRegistrationForm, UserProfileForm
 from django.contrib import auth
 from articles.models import Article
+from django.views.generic import DetailView
+from .models import User
+
+# TODO
+# Need to do ProfileView for an pages with unique id for example "users/profiles/2021331" instead of "profile" func
+# Because it needs access for any users to any user pages
 
 
 def login(request):
@@ -42,5 +48,4 @@ def profile(request):
     else:
         form = UserProfileForm(instance=request.user)
     context = {'form': form, 'date_joined': request.user.date_joined, 'articles': Article.objects.all().filter(author=request.user)}
-    print(context['articles'])
     return render(request, 'users/profile.html', context)

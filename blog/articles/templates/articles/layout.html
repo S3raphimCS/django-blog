@@ -16,15 +16,20 @@
         <li class="nav-item"><a href="{% url 'contacts' %}" class="nav-link link-dark px-2">Контакты</a></li>
       </ul>
       <ul class="nav">
-        <li class="nav-item"><a href="{% url 'login' %}" class="nav-link link-dark px-2">Войти</a></li>
-        <li class="nav-item"><a href="{% url 'signup' %}" class="nav-link link-dark px-2">Зарегистрироваться</a></li>
+          {% if request.user.is_authenticated %}
+          <img src="{% static 'users/icons/user.png' %}" width="32px" height="32px">
+          <li class="nav-item"><b><a href="{% url 'profile' %}" class="nav-link link-dark">{{ request.user.username }}</a></b></li>
+          <li class='nav-item'><b><a href="{% url 'logout' %}" class="nav-link link-dark">Выйти</a></b></li>
+          {% else %}
+             <li class="nav-item"><a href="{% url 'login' %}" class="nav-link link-dark px-2">Войти</a></li>
+             <li class="nav-item"><a href="{% url 'signup' %}" class="nav-link link-dark px-2">Зарегистрироваться</a></li>
+          {% endif %}
       </ul>
     </div>
   </nav>
    <header class="py-3 mb-4 border-bottom">
     <div class="container d-flex flex-wrap justify-content-center">
       <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
-        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
         <span class="fs-4">Django blog ZSS</span>
       </a>
       <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">

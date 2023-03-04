@@ -1,5 +1,7 @@
 /* login/signup pages */
 
+/* Global */
+
 * {
   margin: 0;
   padding: 0;
@@ -20,6 +22,8 @@
 form {
   align-items: center;
 }
+
+/* ----------- */
 
 .registration {
   display: flex;
@@ -448,6 +452,10 @@ a:link.article-link, a:visited.article-link {
 }
 
 a:hover.article-link, a:active.article-link {
+  text-decoration: underline;
+}
+
+a:hover {
   text-decoration: underline;
 }
 

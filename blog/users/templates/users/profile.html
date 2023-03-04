@@ -16,8 +16,14 @@
         <li class="nav-item"><a href="{% url 'contacts' %}" class="nav-link link-dark px-2">Контакты</a></li>
       </ul>
       <ul class="nav">
-        <li class="nav-item"><a href="{% url 'login' %}" class="nav-link link-dark px-2">Войти</a></li>
-        <li class="nav-item"><a href="{% url 'signup' %}" class="nav-link link-dark px-2">Зарегистрироваться</a></li>
+        {% if request.user.is_authenticated %}
+         	<img src=" {% static 'users/icons/user.png'%}" width="32px" height="32px" class='profile-icon'>
+         	<li class="nav-item"><b><a href="{% url 'profile' %}" class="nav-link link-dark">{{ request.user.username }}</a></b></li>
+         	<li class='nav-item'><b><a href="{% url 'logout' %}" class="nav-link link-dark">Выйти</a></b></li>
+        {% else %}
+          <li class="nav-item"><a href="{% url 'login' %}" class="nav-link link-dark px-2">Войти</a></li>
+          <li class="nav-item"><a href="{% url 'signup' %}" class="nav-link link-dark px-2">Зарегистрироваться</a></li>
+        {% endif %}
       </ul>
     </div>
   </nav>
@@ -50,7 +56,7 @@
 				<a href="#!" class='social-network-url'><img src='{% static "users/icons/facebook.png" %}' width='48px' height='48px'></a>
 				<a href="#!" class='social-network-url'><img src='{% static "users/icons/google.png" %}' width='48px' height='48px'></a>
 				<a href="#!" class='social-network-url'><img src='{% static "users/icons/github.png" %}' width='48px' height='48px'></a>
-				<a href="#!" class='social-network-url'><img src='{% static "users/icons/vk.png" %}' width='48px' height='48px'></a></a>
+				<a href="#!" class='social-network-url'><img src='{% static "users/icons/vk.png" %}' width='48px' height='48px'></a>
       </center>
 			</div>
 		</div>
@@ -100,7 +106,7 @@
 			</form>
 		</div>
 		<div class="article-header">
-			<h1 class='article-header-text'>Все статьи</h1>
+			<h1 class='article-header-text'>Все ваши статьи</h1>
 		</div>
 		<div class="articles">
 			{% if articles %}

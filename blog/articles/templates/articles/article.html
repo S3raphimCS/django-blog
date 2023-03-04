@@ -13,15 +13,18 @@
             Дата последнего изменения - {{article.date_of_last_change}}</p>
     </div><br><br>
     <div class="article_main_text">
-        {{ article.text }}
+        <pre style="font-size: 14pt; font-family: 'Poppins', sans-serif; line-height: 1.2em; white-space: pre-wrap;">{{ article.text }}</pre>
     <p class="info" align="right">
         Автор статьи: {{ article.author }}
     </p>
     </div>
     </div>
+        {% if article.author == request.user or request.user.is_staff %}
         <div class="buttons">
             <a href="{% url 'article_update' article.id %}" class="btn btn-warning">Изменить</a>
             <a href="{% url 'article_delete' article.id %}" class="btn btn-danger">Удалить</a>
         </div>
+        {% else %}
+        {% endif %}
     </center>
 {% endblock %}

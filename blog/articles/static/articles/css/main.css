@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins', sans-serif;
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -34,10 +41,6 @@ main article img {
   margin-right: 10px;
 }
 
-main .second_info {
-  font-weight: normal;
-  text-indent: 20px;
-}
 
 .container {
   display: flex;
@@ -77,6 +80,19 @@ div .full_article {
 .full_article h1 {
   text-indent: 20px;
   font-size: 36pt;
+}
+
+/*.welcome {
+  padding-left: 10%;
+}
+
+main .second_info {
+  font-weight: normal;
+  padding-left: 14%;
+}*/
+
+.welcome, .second_info {
+  text-align: center;
 }
 
 /*
@@ -144,3 +160,4 @@ a:active {
   padding-top: 20px;
   margin-top: 20px;
 }
+

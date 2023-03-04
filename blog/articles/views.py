@@ -13,6 +13,7 @@ from django.utils import timezone
 
 def index(request):
     articles = Article.objects.order_by('publication_date')
+    user_info = request.user
     return render(request, 'articles/index.html', {'articles': articles, })
 
 
@@ -63,12 +64,3 @@ def article_create(request):
     }
 
     return render(request, 'articles/article_creating.html', data)
-
-
-def signup(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password')
