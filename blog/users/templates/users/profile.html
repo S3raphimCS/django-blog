@@ -40,7 +40,13 @@
   </header>
   <div class='main-content'>
 	<h1 class='cabinet'>Личный кабинет</h1>
-	<!-- <div class='page'> -->
+	{% if messages %}
+	<div class='alert alert-success'>
+		<div class='message-text'><span>{% for message in messages %} {{ message }} {% endfor %}</span></div>
+		<div style="width: 5%"><button class="profile close" onclick="document.getElementsByClassName('alert')[0].style.display = 'none'"><a><img src='{% static "users/icons/close.png" %}' class="close" width="16px" height="16px"></a></button></div>
+	</div>
+
+	{% endif %}
 		<form action='{% url "profile" %}' method='post' class='user-profile'>
 			{% csrf_token %}
 		<div class='visual-info col-sm-4'>
@@ -94,7 +100,8 @@
 				</div>
 				<div class='articles-info row left-column'>
 					<div class='col-sm-6'>
-					<label><a href='#' class='article-link'>Последняя статья</a></label>
+					<label><a href='#' class='article-link'>Последняя статья</a></label><br>
+					<a href="{% url 'article-view' last_article.id %}"> {{ last_article.title }} </a>
 					</div>
 					<div class='col-sm-6 right-column'>
 											<div class='for-right-column'>
@@ -111,6 +118,7 @@
 		<div class="articles">
 			{% if articles %}
 			{% for article in articles %}
+			<div class='full-article'>
 			<article>
       	<div class="preview_image">
       	    <a href='{% url "article-view" article.id %}' class="article-link"><img src="../../{{ article.picture }}" class="img" width="144" height='144'	align="left"></a>
@@ -120,12 +128,27 @@
       	    <p class="article_text_preview"><a href='{% url "article-view" article.id %}' class='article-link'>{{article.text}}</a></p>
       	</div>
       </article>
-			{% endfor %}
+				
+				<div class='media-info'>
+      		<div class='views'>
+      			<p>Просмотров: *Тут будет кол-во* </p>
+      		</div>
+
+      		<div class='rating'>
+      			<p>Рейтинг: *Тут будет рейтинг*</p>	
+      		</div>
+      	</div>
+			
+    	</div>
+      {% endfor %}
 			{% else %}
 				<h3><u>Здесь пока нет статей ;c</u></h3>
 			{% endif %}
 		</div>
-	<!-- </div> -->
-	<div> {# main content #}
+	<div> 
 </body>
 </html>
+<!-- <script>
+document.getElementsByClassName('alert')[0].style.display = "none"
+</script>
+ -->

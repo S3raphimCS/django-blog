@@ -5,6 +5,48 @@
 
 {% block content %}
 <div class="col-12 col-md-9 col-lg-7 col-xl-7">
+
+    {% if messages or form.non_field_errors %}
+        {% if messages %}
+        <div class="alert alert-success" role="alert">
+            <div class='message-text'>
+            <span>
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+            </span>
+            </div>
+            <div style="width: 5%">
+                <button class="close register" onclick="document.getElementsByClassName('alert')[0].style.display = 'none'"><img src='{% static "users/icons/close.png" %}' class="close" width="16px" height="16px"></button>
+            </div>
+        </div>
+        <!-- <div class='alert alert-warning' role='alert' style='margin-bottom: 20px; width: 90%;'>
+            <div>
+            
+            <div style="width: 10%">
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&#10006;</span></button>
+            </div>
+        </div> -->
+        {% else %}
+        <div class="alert alert-danger" role="alert">
+            <div class='message-text'>
+            <span>
+            Введите верные имя пользователя и пароль.<br><strong>Обратите внимание</strong>, что поля ввода чувствительны к регистру!
+            </span>
+            </div>
+            <div>
+                <div style="width: 5%"><button class="close login" onclick="document.getElementsByClassName('alert')[0].style.display = 'none'"><a><img src='{% static "users/icons/close.png" %}' class="close" width="16px" height="16px"></a></button></div>
+            </div>
+        </div>
+        {% endif %}
+    {% endif %}
+
+<!--     {# if error #}
+    <div class="error-div">
+        <div class='error-div-text'><strong>Ошибка введенных данных</strong></div>
+    </div>
+    {# endif #} -->
+    
     <div class='card'>
         <div class='card-body'>
             <div class="form-header"><font color='#4f4f4f'>Авторизация</font></div>

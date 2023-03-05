@@ -25,6 +25,69 @@ form {
 
 /* ----------- */
 
+/* Messages */
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.alert {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+
+.close {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  float: right;
+  transform: translate(35%, -35%)
+
+}
+
+.message-text {
+  width: 95%;
+  padding: 10px 0 10px;
+}
+
+.profile {
+  transform: translate(25%, -25%)
+}
+
+.login {
+  transform: translate(140%, -20%)
+}
+
+.register {
+  transform: translate(80%, -25%)
+}
+
+button {
+  border: none;
+}
+
+/* --------------- */
+
 .registration {
   display: flex;
   justify-content: center;
@@ -189,6 +252,7 @@ input {
 }
 
 .card {
+  margin-top: 40px;
   border: 0;
     --mdb-card-spacer-y: 1.5rem;
     --mdb-card-spacer-x: 1.5rem;
@@ -403,6 +467,7 @@ div .row {
   border-radius: 10px;
   margin: 5px;
   padding: 25px;
+  width: 65%;
 }
 
 .article_preview {
@@ -434,9 +499,28 @@ article {
   border-radius: 15px;
   margin-bottom: 5px;
   padding-right: 20px;
-  width: 850px;
+  width: 80%;
   height: 149px;
 }
+
+div .full-article {
+  display: flex;
+  flex-direction: row;
+}
+
+.media-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  padding-left: 10px;
+}
+
+.views, .rating {
+  text-align: center;
+  padding-top: 20px;
+}
+
 
 article img {  
   padding-right: 10px;
