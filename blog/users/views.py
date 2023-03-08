@@ -16,6 +16,7 @@ from .models import User
 # Realize search in header
 # Model for article on moderating and add to profile template user's articles on moderating
 # Add permission for staff to moderate articles and post it on site
+# Add button "Change avatar" in profile
 
 
 def login(request):
