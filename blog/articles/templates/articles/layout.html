@@ -19,6 +19,9 @@
           {% if request.user.is_authenticated %}
           <img src="{% static 'users/icons/user.png' %}" width="32px" height="32px">
           <li class="nav-item"><b><a href="{% url 'profile' %}" class="nav-link link-dark">{{ request.user.username }}</a></b></li>
+          {% if request.user.is_staff or request.user.is_superuser %}
+						<li class='nav-item'><b><a href="{% url 'admin:index' %}" class="nav-link link-dark active px-2">Админ-панель</a></b>
+					{% endif %}
           <li class='nav-item'><b><a href="{% url 'logout' %}" class="nav-link link-dark">Выйти</a></b></li>
           {% else %}
              <li class="nav-item"><a href="{% url 'login' %}" class="nav-link link-dark px-2">Войти</a></li>

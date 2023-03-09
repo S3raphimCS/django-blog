@@ -8,8 +8,9 @@ from .models import User
 # TODO
 # Need to do ProfileView for an pages with unique id for example "users/profiles/2021331" instead of "profile" func
 # Because it needs access for any users to any user pages
-# Button "Admin Panel" for superusers or staff
-# Button "Create article"
+#
+# Button "Admin Panel" for superusers or staff  V
+# Button "Create article" (mb in profile)
 # Better decor for "Последняя статья" in profile
 # Views and rating in future
 # form.errors in signup template (HINT - position: relative for independent blocks)

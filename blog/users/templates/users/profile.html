@@ -1,7 +1,7 @@
 {% load static %}
 
 <html>
-<head> 
+<head>
 <title>Профиль</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <link href="{% static 'users/css/main.css' %}" rel="stylesheet">
@@ -19,6 +19,9 @@
         {% if request.user.is_authenticated %}
          	<img src=" {% static 'users/icons/user.png'%}" width="32px" height="32px" class='profile-icon'>
          	<li class="nav-item"><b><a href="{% url 'profile' %}" class="nav-link link-dark">{{ request.user.username }}</a></b></li>
+					{% if request.user.is_staff or request.user.is_superuser %}
+						<li class='nav-item'><b><a href="{% url 'admin:index' %}" class="nav-link link-dark active px-2">Админ-панель</a></b>
+					{% endif %}
          	<li class='nav-item'><b><a href="{% url 'logout' %}" class="nav-link link-dark">Выйти</a></b></li>
         {% else %}
           <li class="nav-item"><a href="{% url 'login' %}" class="nav-link link-dark px-2">Войти</a></li>
@@ -51,7 +54,7 @@
 			{% csrf_token %}
 		<div class='visual-info col-sm-4'>
 			<div class='avatar'>
-				<img src='{% if user.image %} {{ user.image.url }} {% else %} {% static "users/icons/user.png" %} {% endif %}' class='img rounded-circle' alt='User-Profile-Image' width='200px' height='200px'>
+				<a><img src='{% if user.image %} {{ user.image.url }} {% else %} {% static "users/icons/user.png" %} {% endif %}' class='img rounded-circle' alt='User-Profile-Image' width='200px' height='200px'></a>
 			</div>
 			<div class='username'>
 				<label>Никнейм: </label>
@@ -75,7 +78,7 @@
 					<div class='firstname col-sm-6 left-column'>
 					<label>Имя</label>
 					{{ form.first_name }}
-					</div>		 
+					</div>
 					<div class='lastname col-sm-6 right-column'>
 											<div class='for-right-column'>
 					<label>Фамилия</label>
@@ -87,7 +90,7 @@
 					<div class='email col-sm-6 left-column' >
 					<label>Email</label>
 					{{ form.email }}
-					</div>			
+					</div>
 					<div class='date col-sm-6 right-column'>
 											<div class='for-right-column'>
 					<label>Дата регистрации</label>
@@ -128,24 +131,24 @@
       	    <p class="article_text_preview"><a href='{% url "article-view" article.id %}' class='article-link'>{{article.text}}</a></p>
       	</div>
       </article>
-				
+
 				<div class='media-info'>
       		<div class='views'>
       			<p>Просмотров: *Тут будет кол-во* </p>
       		</div>
 
       		<div class='rating'>
-      			<p>Рейтинг: *Тут будет рейтинг*</p>	
+      			<p>Рейтинг: *Тут будет рейтинг*</p>
       		</div>
       	</div>
-			
+
     	</div>
       {% endfor %}
 			{% else %}
 				<h3><u>Здесь пока нет статей ;c</u></h3>
 			{% endif %}
 		</div>
-	<div> 
+	<div>
 </body>
 </html>
 <!-- <script>
