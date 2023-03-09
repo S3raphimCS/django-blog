@@ -5,6 +5,11 @@
 }
 
 
+.profile-icon {
+  margin-top: 3px;
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -160,4 +165,3 @@ a:active {
   padding-top: 20px;
   margin-top: 20px;
 }
-

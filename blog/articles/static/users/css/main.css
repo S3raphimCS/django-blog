@@ -278,7 +278,7 @@ input {
     background-clip: border-box;
     border: var(--mdb-card-border-width) solid var(--mdb-card-border-color);
     border-radius: var(--mdb-card-border-radius);
-    box-shadow: var(--mdb-card-box-shadow); 
+    box-shadow: var(--mdb-card-box-shadow);
   }
 
 
@@ -351,7 +351,7 @@ a:visited {
 
 .article-header-text {
   text-indent: 40px;
-  padding-top: 40px; 
+  padding-top: 40px;
 }
 /* ------------ */
 
@@ -362,6 +362,10 @@ a:visited {
   border: 2px solid;
   border-color: #4f4f4f;
   border-radius: 10px;
+}
+
+.profile-icon {
+  margin-top: 3px;
 }
 
 /* Cell with avatar, nickname, soc. networks */
@@ -522,7 +526,7 @@ div .full-article {
 }
 
 
-article img {  
+article img {
   padding-right: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
